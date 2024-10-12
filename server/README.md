@@ -1,1 +1,1 @@
-#serverside scripting
+serverside scripting for everything
