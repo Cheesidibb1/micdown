@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chat</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <link href="/chat.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="manifest" href="/assets/site.webmanifest">  
+    <script>
+        var socket = io();
+        
+        function sendMessage() {
+            var msg = document.getElementById('message').value;
+            socket.emit('chat message', msg);
+            document.getElementById('message').value = '';
+            return false; // Prevent form submission
+        }
+
+        socket.on('chat message', function(msg) {
+            var item = document.createElement('li');
+            item.textContent = msg;
+            document.getElementById('messages').appendChild(item);
+        });
+    </script>
+    
+</head>
+<body>
+    <div class="chat">
+        <ul id="messages"></ul>
+        <form onsubmit="return sendMessage();">
+            <input id="message" autocomplete="off" placeholder="Take on the world"/><button>Send</button>
+        </form>
+    </div>
+</body>
+</html>
