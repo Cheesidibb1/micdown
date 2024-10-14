@@ -3,9 +3,10 @@
 <head>
     <title>Chat</title>
     <script src="/socket.io/socket.io.js"></script>
+    <link href="/chat.css" type="text/css" rel="stylesheet" />
     <script>
         var socket = io();
-
+        
         function sendMessage() {
             var msg = document.getElementById('message').value;
             socket.emit('chat message', msg);
@@ -19,6 +20,7 @@
             document.getElementById('messages').appendChild(item);
         });
     </script>
+    
 </head>
 <body>
     <div class="chat">
