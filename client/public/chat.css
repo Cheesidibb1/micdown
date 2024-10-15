@@ -1,5 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+
 * {
-    font-family: Arial, sans-serif;
+    font-family: 'Fredoka', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -9,6 +16,7 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
+    display: flex;
 }
 
 #messages {
@@ -29,10 +37,11 @@ ul {
     background-color: #e9ecef; /* Light gray background for messages */
     border-radius: 4px; /* Rounded corners for messages */
     list-style-type: none;
+    justify-content: right;
 }
 
 form {
-    display: flex; /* Use flexbox for form layout */
+    display: flexbox; /* Use flexbox for form layout */
     justify-content: space-between; /* Space between input and button */
     position: absolute;
     right: 50px;
@@ -48,13 +57,21 @@ form {
 
 button {
     padding: 10px 15px; /* Padding for button */
-    background-color: #28a745; /* Green background */
+    background-color: #6c91f0; /* Green background */
     color: white; /* White text */
     border: none; /* Remove border */
     border-radius: 10px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
+    position: relative;
+    transition: transform 0.2s ease;
+    font-weight: 600;
+    box-shadow: 0 2px 5px #2e3f69;
+}
+button:active {
+    transform: scale(.99);
 }
 
 button:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #4a67b1;
 }
+
